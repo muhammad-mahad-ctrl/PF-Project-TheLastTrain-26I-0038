@@ -129,6 +129,9 @@ const char* getEntityName(char entitySymbol) {
 
 bool loadInitialState(const char *filename, int &playerFloor, int &playerRoom, int &energy, int &time, int &score, char inventory[MAX_INVENTORY_CAPACITY], int &inventoryCount, bool objectives[NUM_OBJECTIVES], int &emergencyTripsLeft){
 
+(void)playerFloor; 
+(void)playerRoom;
+
   ifstream state(filename);
     
   if (!state.is_open()) { 
@@ -146,7 +149,12 @@ bool loadInitialState(const char *filename, int &playerFloor, int &playerRoom, i
     objectives[i] = 0;
   }
 
+  for (int i = 0; i < MAX_INVENTORY_CAPACITY; i++) {
+    inventory[i] = ENT_NONE;
+  }
 
+
+  //intial state text conversion to value
   char line[MAX_LINE_LEN];
 
   while (state.getline(line, MAX_LINE_LEN)) {
@@ -156,12 +164,34 @@ bool loadInitialState(const char *filename, int &playerFloor, int &playerRoom, i
             colon = i;
         }
     }
-    if (colon == -1) {
+    if (colon == -1) { //random index arha tha during test 
     continue;
     }
-    line[colon] = '\0';
-    cout << line << " -> " << line + colon + 2 << endl;
-}
+
+    line[colon] = '\0'; //end of line character
+
+    //string 'number' convert into value 
+    char* num = line + colon + 2;
+    int number = 0;
+
+    int i = 0;
+    while (num[i] != '\0') {
+    number = number * 10 + (num[i] - '0'); //old logic '5' - '0' = 5
+    i++;
+    }
+
+    if (stringEquals(line, "INITIAL_ENERGY")) {
+    energy = number;
+    }
+    else if (stringEquals(line, "INITIAL_TIME")) {
+    time = number;
+    }
+    else if (stringEquals(line, "INITIAL_SCORE")) {
+    score = number;
+    }
+    
+    
+  }
 
 
   state.close();
