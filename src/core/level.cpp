@@ -149,9 +149,19 @@ bool loadInitialState(const char *filename, int &playerFloor, int &playerRoom, i
 
   char line[MAX_LINE_LEN];
 
-  while (state.getline(line, MAX_LINE_LEN)){
-    cout << line << endl;
-  }
+  while (state.getline(line, MAX_LINE_LEN)) {
+    int colon = -1;
+    for (int i = 0; line[i] != '\0'; i++) {
+        if (line[i] == ':') {
+            colon = i;
+        }
+    }
+    if (colon == -1) {
+    continue;
+    }
+    line[colon] = '\0';
+    cout << line << " -> " << line + colon + 2 << endl;
+}
 
 
   state.close();
