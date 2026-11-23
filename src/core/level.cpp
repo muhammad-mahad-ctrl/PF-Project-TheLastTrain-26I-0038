@@ -67,7 +67,6 @@ bool loadBuildingMap(const char *filename, char horizontalConn[NUM_FLOORS][ROOMS
     }
   }
 
-
   building.close();
 
   return true;
@@ -75,18 +74,87 @@ bool loadBuildingMap(const char *filename, char horizontalConn[NUM_FLOORS][ROOMS
 }
 
 
-
-const char* getEntityName(char entitySymbol){
-
-  
+const char* getEntityName(char entitySymbol) {
+    if (entitySymbol == ENT_MASTER_KEY) {
+        return "Master Key";
+    }
+    else if (entitySymbol == ENT_ENERGY_PACK) {
+        return "Energy Pack";
+    }
+    else if (entitySymbol == ENT_EMERGENCY_TOOLKIT) {
+        return "Emergency Tool Kit";
+    }
+    else if (entitySymbol == ENT_CLUE_4) {
+        return "Clue Digit 4";
+    }
+    else if (entitySymbol == ENT_FUSE) {
+        return "Fuse";
+    }
+    else if (entitySymbol == ENT_CAT) {
+        return "Stranded Cat";
+    }
+    else if (entitySymbol == ENT_CONTROL_PANEL) {
+        return "Control Panel";
+    }
+    else if (entitySymbol == ENT_LIFT_PASS) {
+        return "Lift Pass";
+    }
+    else if (entitySymbol == ENT_PASSENGER) {
+        return "Stranded Passenger";
+    }
+    else if (entitySymbol == ENT_MEDICAL_KIT) {
+        return "Medical Kit";
+    }
+    else if (entitySymbol == ENT_EMERGENCY_CARD) {
+        return "Emergency Card";
+    }
+    else if (entitySymbol == ENT_CLUE_2) {
+        return "Clue Digit 2";
+    }
+    else if (entitySymbol == ENT_CLUE_7) {
+        return "Clue Digit 7";
+    }
+    else if (entitySymbol == ENT_CABINET_TRAIN_KEY) {
+        return "Cabinet / Train Key";
+    }
+    else if (entitySymbol == ENT_CAT_CARRIER) {
+        return "Cat Carrier";
+    }
+    else if (entitySymbol == ENT_OBSERVATION_TOKEN) {
+        return "Observation Token";
+    }
+    return "NONE";
 }
-
-
-
 
 
 bool loadInitialState(const char *filename, int &playerFloor, int &playerRoom, int &energy, int &time, int &score, char inventory[MAX_INVENTORY_CAPACITY], int &inventoryCount, bool objectives[NUM_OBJECTIVES], int &emergencyTripsLeft){
 
+  ifstream state(filename);
+    
+  if (!state.is_open()) { 
+    return false;
+  }
+
+  //set everything initial
+  energy = INITIAL_ENERGY;
+  time = INITIAL_TIME;
+  score = INITIAL_SCORE;
+  inventoryCount = 0;
+  emergencyTripsLeft = 0;
+
+  for(int i = 0; i < NUM_OBJECTIVES; i++){
+    objectives[i] = 0;
+  }
+
+
+  char line[MAX_LINE_LEN];
+
+  while (state.getline(line, MAX_LINE_LEN)){
+    cout << line << endl;
+  }
+
+
+  state.close();
   return true;
 }
 
