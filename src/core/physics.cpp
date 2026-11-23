@@ -118,7 +118,7 @@ bool canTraverse(int targetFloor, int targetRoom, char connType, const char inve
     if(connType == CONN_LIFT1 || connType == CONN_DOOR || connType == CONN_STAIRS || connType == CONN_WINDOW) // lift1, door, stairs, window allowed
     return true;
 
-    if (connType == CONN_LIFT2)
+    if (connType == CONN_LIFT2) //lift 2
     {
         if (emergencyTripsLeft > 0 || lift2Operational == 1)
         {

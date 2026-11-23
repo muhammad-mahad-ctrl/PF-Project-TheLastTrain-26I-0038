@@ -76,6 +76,10 @@ bool loadBuildingMap(const char *filename, char horizontalConn[NUM_FLOORS][ROOMS
 
 
 
+const char* getEntityName(char entitySymbol){
+
+  
+}
 
 
 
