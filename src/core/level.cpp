@@ -2,7 +2,6 @@
 #include "util.h"
 #include<fstream>
 #include<iostream>
-#include<string>
 
 using namespace std;
 
@@ -16,7 +15,7 @@ bool loadBuildingMap(const char *filename, char horizontalConn[NUM_FLOORS][ROOMS
     return false;
   }
 
-//clearing arrays before updating
+//update karny sy pehly clearing array
 
   for (int i = 0; i < NUM_FLOORS; i++) { //clear all connType = none 
     for (int j = 0; j < ROOMS_PER_FLOOR - 1; j++) {
@@ -47,7 +46,7 @@ bool loadBuildingMap(const char *filename, char horizontalConn[NUM_FLOORS][ROOMS
 
    if (line[10] == 'F' && line[13] == 'R') {  
       int floor = line[11]-'0'; //ascii conversion '5'/53 -'0'/48 = 5
-      horizontalConn[floor-1][0] = line[20]; //conn 1
+      horizontalConn[floor-1][0] = line[20]; //conn  1
       horizontalConn[floor-1][1] = line[32]; //conn 2
       horizontalConn[floor-1][2] = line[44]; //conn 3
 
@@ -123,7 +122,7 @@ const char* getEntityName(char entitySymbol) {
     else if (entitySymbol == ENT_OBSERVATION_TOKEN) {
         return "Observation Token";
     }
-    return "NONE";
+    return "HMMMM";
 }
 
 

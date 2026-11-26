@@ -18,7 +18,7 @@ int clampInt(int val, int minVal, int maxVal){
 
 void printHeader(const char* title){
 
-    cout<<"========"<<title<<"========";
+    cout<<"========"<<title<<"========"<<endl;
 
 }
 
