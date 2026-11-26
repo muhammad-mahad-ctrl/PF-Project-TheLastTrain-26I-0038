@@ -33,3 +33,10 @@ bool stringEquals(const char* a, const char* b){
 
     return a[count] == '\0' && b[count] == '\0';
 }
+
+void objectiveDone(const char* objectiveLabel, bool is_done){ //viewer_iface mein used 
+    if(is_done)
+        std::cout<<" (X) "<<objectiveLabel<<endl;
+    else
+        std::cout<<" ( ) "<<objectiveLabel<<endl;
+}

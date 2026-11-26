@@ -41,7 +41,8 @@ int main() {
     std::cout << "===========================================\n";
     std::cout << " THE LAST TRAIN - SIMULATION INITIALIZED   \n";
     std::cout << "===========================================\n";
-
+//renderObjectivesChecklist(objectives); testing
+//renderAsciiBuilding(2, 3); testing
     runSimulation(playerFloor, playerRoom, energy, time, score,
                   inventory, inventoryCount, objectives, emergencyTripsLeft,
                   horizontalConn, roomEntities, entityCounts);

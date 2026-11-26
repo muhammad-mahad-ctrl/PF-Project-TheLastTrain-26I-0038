@@ -6,6 +6,7 @@ int clampInt(int val, int minVal, int maxVal);
 void trimWhitespace(char* str);
 bool stringEquals(const char* a, const char* b);
 void printHeader(const char* title);
+void objectiveDone(const char* objectiveLabel, bool is_done);
 void clearScreen();
 
 #endif // UTIL_H
