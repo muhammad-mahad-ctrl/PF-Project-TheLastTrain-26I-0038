@@ -29,7 +29,6 @@ bool hasItem(const char inventory[MAX_INVENTORY_CAPACITY], int inventoryCount, c
 
 bool addItem(char inventory[MAX_INVENTORY_CAPACITY], int &inventoryCount, char itemSymbol)
 {
-
     if (inventoryCount >= MAX_INVENTORY_CAPACITY)
         return false;
 
@@ -98,8 +97,6 @@ bool isDirectlyConnected(int fromF, int fromR, int toF, int toR, const char hori
     outConnType = CONN_NONE;
     return false;
 }
-
-
 
 bool canTraverse(int targetFloor, int targetRoom, char connType, const char inventory[MAX_INVENTORY_CAPACITY], int inventoryCount, int emergencyTripsLeft, bool lift2Operational){
 

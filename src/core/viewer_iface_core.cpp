@@ -13,8 +13,9 @@ void renderDashboard(int playerFloor, int playerRoom, int energy, int time, int 
     cout<<"Energy: "<<energy<<" Time: "<<time<<" Emergency Trips Left: "<<emergencyTripsLeft<<" Score: "<<score<<endl;
     cout<<"Inventory: "<<inventoryCount<<endl;
 
-    for(int i =0; i<inventoryCount - 1; i++)
+    for(int i =0; i<inventoryCount; i++)
         cout<<getEntityName(inventory[i]);
+    cout<<endl;
 }
 
 void renderRoomDetails(int floor, int room, const char roomEntities[NUM_FLOORS][ROOMS_PER_FLOOR][MAX_ENTITIES_PER_ROOM], int entityCount){
