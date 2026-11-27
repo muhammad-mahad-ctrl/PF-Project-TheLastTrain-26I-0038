@@ -3,14 +3,56 @@
 #include "switches.h"
 #include "logger.h"
 #include "viewer_iface.h"
+#include "level.h"
 #include "util.h"
 #include<iostream>
 
-// Modular simulation loop using primitive variables
 
 
 void runSimulation(int& playerFloor, int& playerRoom, int& energy, int& time, int& score, char inventory[MAX_INVENTORY_CAPACITY], int& inventoryCount, bool objectives[NUM_OBJECTIVES], int& emergencyTripsLeft, char horizontalConn[NUM_FLOORS][ROOMS_PER_FLOOR - 1], char roomEntities[NUM_FLOORS][ROOMS_PER_FLOOR][MAX_ENTITIES_PER_ROOM], int entityCounts[NUM_FLOORS][ROOMS_PER_FLOOR]) {
     
+      while (true)
+      {
+            std::cout<<"Enter Starting Floor:"<<std::endl;
+            std::cin>>playerFloor;
+            std::cout<<"Enter Starting Room:"<<std::endl;
+            std::cin>>playerRoom;
+
+            if(!std::cin){return;} //agar invalid input he
+
+            if(!validateStartingRoom(playerFloor, playerRoom, horizontalConn)){
+               std::cout<<"Enter Valid Location!"<<std::endl;
+               continue;
+            }   
+            break;
+      }
+      
+      //loop jab tk end conditions
+      while(true){
+            
+            //lift 2
+            bool lift2Operational = objectives[OBJ_FUSE_INSTALLED] && objectives[OBJ_LIFT_PASS];
+            objectives[OBJ_LIFT2_ACTIVE] = lift2Operational;
+
+            renderDashboard(playerFloor, playerRoom, energy, time, score, inventory, inventoryCount, emergencyTripsLeft);
+            renderRoomDetails(playerFloor, playerRoom, roomEntities, entityCounts[playerFloor-1][playerRoom-1]);
+            renderAsciiBuilding(playerFloor, playerRoom);
+       
+            //ask action
+            char action; //int action mein invalid par infinite loop chal rha
+            std::cout<<"Action (1 Move\t2 Inspect\t3 Collect\t4 Use\t5 Unlock cabinet\t6 Save\t7 Quit): "<<std::endl;
+            std::cin>>action;
+
+            if(!std::cin) break; 
+            
+            if(action <'1' || action > '7'){
+              std::cout<<"Invalid Action!"<<std::endl;
+              continue;      
+            }
+
+
+
+      }
 
 }
 
@@ -44,11 +86,7 @@ bool handleMoveCommand(int targetFloor, int targetRoom,  int& currentFloor, int&
 return true;
 }
 
-bool handleInspectCommand(int currentFloor, int currentRoom,
-                          int& energy, int& time,
-                          const char roomEntities[NUM_FLOORS][ROOMS_PER_FLOOR][MAX_ENTITIES_PER_ROOM],
-                          int entityCount,
-                          bool objectives[NUM_OBJECTIVES], int& score){
+bool handleInspectCommand(int currentFloor, int currentRoom, int& energy, int& time, const char roomEntities[NUM_FLOORS][ROOMS_PER_FLOOR][MAX_ENTITIES_PER_ROOM], int entityCount, bool objectives[NUM_OBJECTIVES], int& score){
 
                     return true;
                    }

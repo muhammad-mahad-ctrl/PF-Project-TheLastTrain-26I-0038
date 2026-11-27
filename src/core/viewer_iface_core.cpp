@@ -28,9 +28,9 @@ void renderRoomDetails(int floor, int room, const char roomEntities[NUM_FLOORS][
     if(entityCount == 0)
         cout<<"Empty Room"<<endl;
     else
-        for(int i = 0; i < entityCount - 1; i++){
-        cout<<roomEntities[floor - 1][room - 1][i]; //entity ka symbol
-        cout<<" "<<getEntityName(roomEntities[floor - 1][room - 1][i]); //symbol pass horha
+        for(int i = 0; i < entityCount; i++) {
+        cout<<roomEntities[floor - 1][room - 1][i]<<" - "; //entity ka symbol
+        cout<<" "<<getEntityName(roomEntities[floor - 1][room - 1][i])<<endl; //symbol pass horha
         }
 
 }
@@ -58,7 +58,7 @@ void renderObjectivesChecklist(const bool objectives[NUM_OBJECTIVES]){
 
 void renderAsciiBuilding(int playerFloor, int playerRoom){
 
-    for(int floor = 1; floor <= NUM_FLOORS; floor++ ){
+    for(int floor = NUM_FLOORS; floor >= 1; floor-- ){
         for(int room = 1; room <= ROOMS_PER_FLOOR; room++){
             std::cout<< (floor == playerFloor && room == playerRoom ? "[U]" : "[ ]"); //agar player he to U
         }
