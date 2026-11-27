@@ -174,7 +174,7 @@ bool loadInitialState(const char *filename, int &playerFloor, int &playerRoom, i
     int number = 0;
 
     int i = 0;
-    while (num[i] != '\0') {
+    while (num[i] >= '0' && num[i] <= '9') { {
     number = number * 10 + (num[i] - '0'); //old logic '5' - '0' = 5
     i++;
     }
@@ -199,5 +199,13 @@ bool loadInitialState(const char *filename, int &playerFloor, int &playerRoom, i
 
 bool validateStartingRoom(int startFloor, int startRoom, const char horizontalConn[NUM_FLOORS][ROOMS_PER_FLOOR - 1]){
 
+  (void)horizontalConn;
+
+  if(startFloor < 1 || startFloor > NUM_FLOORS)
+  return false;
+  if(startRoom < 1 || startRoom > ROOMS_PER_FLOOR)
+  return false;
+  else
   return true;
+
 }
