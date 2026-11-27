@@ -163,9 +163,9 @@ bool loadInitialState(const char *filename, int &playerFloor, int &playerRoom, i
             colon = i;
         }
     }
-    if (colon == -1) { //random index arha tha during test 
+    if (colon == -1)  //random index arha tha during test 
     continue;
-    }
+    
 
     line[colon] = '\0'; //end of line character
 
@@ -174,10 +174,10 @@ bool loadInitialState(const char *filename, int &playerFloor, int &playerRoom, i
     int number = 0;
 
     int i = 0;
-    while (num[i] >= '0' && num[i] <= '9') { {
-    number = number * 10 + (num[i] - '0'); //old logic '5' - '0' = 5
-    i++;
-    }
+    while (num[i] >= '0' && num[i] <= '9') { 
+      number = number * 10 + (num[i] - '0'); //old logic '5' - '0' = 5
+      i++;
+      }
 
     if (stringEquals(line, "INITIAL_ENERGY")) {
     energy = number;
@@ -188,13 +188,12 @@ bool loadInitialState(const char *filename, int &playerFloor, int &playerRoom, i
     else if (stringEquals(line, "INITIAL_SCORE")) {
     score = number;
     }
-    
-    
   }
 
 
   state.close();
   return true;
+  
 }
 
 bool validateStartingRoom(int startFloor, int startRoom, const char horizontalConn[NUM_FLOORS][ROOMS_PER_FLOOR - 1]){
