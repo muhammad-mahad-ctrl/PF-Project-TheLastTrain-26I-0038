@@ -40,7 +40,7 @@ void runSimulation(int& playerFloor, int& playerRoom, int& energy, int& time, in
        
             //ask action
             char action; //int action mein invalid par infinite loop chal rha
-            std::cout<<"Action (1 Move\t2 Inspect\t3 Collect\t4 Use\t5 Unlock cabinet\t6 Save\t7 Quit): "<<std::endl;
+            std::cout<<"Action (1 Move    2 Inspect    3 Collect    4 Use    5 Unlock cabinet    6 Save    7 Quit): "<<std::endl;
             std::cin>>action;
 
             if(!std::cin) break; 
@@ -50,6 +50,15 @@ void runSimulation(int& playerFloor, int& playerRoom, int& energy, int& time, in
               continue;      
             }
 
+            if(action == '7') { break; }       
+            else if(action == '1'){
+               int floor, room;
+               std::cout<<"Enter Target Floor: "<<std::endl;
+               std::cin>>floor;
+               std::cout<<"Enter Target Room: "<<std::endl;
+               std::cin>>room;
+               handleMoveCommand(floor, room, playerFloor, playerRoom, energy, time, horizontalConn, inventory, inventoryCount, emergencyTripsLeft, lift2Operational);
+            }    
 
 
       }

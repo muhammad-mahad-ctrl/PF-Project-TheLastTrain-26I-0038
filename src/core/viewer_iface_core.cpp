@@ -25,13 +25,16 @@ void renderRoomDetails(int floor, int room, const char roomEntities[NUM_FLOORS][
     }
     cout<<"Room: F"<<floor<<"-R"<<room<<endl;
     
-    if(entityCount == 0)
-        cout<<"Empty Room"<<endl;
-    else
-        for(int i = 0; i < entityCount; i++) {
+    int display = 0;
+    for(int i = 0; i < entityCount; i++) {
+        if(roomEntities[floor - 1][room - 1][i] == ENT_CLUE_2 || roomEntities[floor - 1][room - 1][i] == ENT_CLUE_4 || roomEntities[floor - 1][room - 1][i] == ENT_CLUE_7)
+        continue;
+        display++;
         cout<<roomEntities[floor - 1][room - 1][i]<<" - "; //entity ka symbol
         cout<<" "<<getEntityName(roomEntities[floor - 1][room - 1][i])<<endl; //symbol pass horha
-        }
+    }
+    if(display == 0) cout<<"Nothing visible here :)"<<endl; //hidden 2,4,7 clues ky liye
+
 
 }
 
