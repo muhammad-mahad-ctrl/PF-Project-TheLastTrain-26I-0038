@@ -115,7 +115,7 @@ void runSimulation(int& playerFloor, int& playerRoom, int& energy, int& time, in
             }
             else if(action == '6'){
                   clearScreen();
-                  if(saveGameStateToFile("out/save.txt", playerFloor, playerRoom, energy, time, score, inventory, inventoryCount, objectives, emergencyTripsLeft, roomEntities, entityCounts))
+                  if(saveGameStateToFile("out/savegame.txt", playerFloor, playerRoom, energy, time, score, inventory, inventoryCount, objectives, emergencyTripsLeft, roomEntities, entityCounts))
                   std::cout<<"Game Saved!"<<std::endl;
                   else
                   std::cout<<"Couldnt save!"<<std::endl;
@@ -131,7 +131,7 @@ void runSimulation(int& playerFloor, int& playerRoom, int& energy, int& time, in
             printHeader("WHAT A LOSER!");
       }
 
-      writeGameSummaryReport("out/summary.txt", score, energy, time, objectives, objectives[OBJ_MISSION_WON]);
+      writeGameSummaryReport("out/game_summary.txt", score, energy, time, objectives, objectives[OBJ_MISSION_WON]);
 
 }
 
