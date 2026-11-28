@@ -66,7 +66,7 @@ void runSimulation(int& playerFloor, int& playerRoom, int& energy, int& time, in
             } 
             else if(action == '3'){
                   char itemSymbol;
-                  std::cout<<"Collect: "<<std::endl;
+                  std::cout<<"Collect item: "<<std::endl;
                   std::cin>>itemSymbol;
                   handleCollectCommand(itemSymbol, playerFloor, playerRoom, energy, time, score, roomEntities, entityCounts[playerFloor-1][playerRoom-1], inventory, inventoryCount, objectives);
                   
@@ -75,6 +75,12 @@ void runSimulation(int& playerFloor, int& playerRoom, int& energy, int& time, in
 
                   if(itemSymbol == ENT_EMERGENCY_CARD && is_card_collected)
                   emergencyTripsLeft = 3;
+            }
+            else if(action == '4'){
+                  char itemSymbol;
+                  std::cout<<"Use item: "<<std::endl;
+                  std::cin>>itemSymbol;
+                  handleUseCommand(itemSymbol, playerFloor, playerRoom, energy, time, score, inventory, inventoryCount, objectives);
             }
       }
 }
@@ -201,8 +207,79 @@ bool handleCollectCommand(char itemSymbol, int currentFloor, int currentRoom, in
 
 bool handleUseCommand(char itemSymbol, int currentFloor, int currentRoom, int& energy, int& time, int& score, char inventory[MAX_INVENTORY_CAPACITY], int& inventoryCount, bool objectives[NUM_OBJECTIVES]){
 
-                    return true;
-                   }
+      //medical kit
+      if(itemSymbol == ENT_MEDICAL_KIT){
+            
+            if(!hasItem(inventory, inventoryCount, itemSymbol) || currentFloor != 4 || currentRoom != 1){
+            std::cout<<"Can't use the item!"<<std::endl;
+            return false;
+            }
+
+            std::cout<<"Passenger Rescued!"<<std::endl;
+            applyResourceDelta(energy, time, COST_ITEM_USE_ENERGY, COST_ITEM_USE_TIME);
+            objectives[OBJ_PASSENGER_RESCUED] = 1;
+            applyScoreDelta(score, SCORE_RESCUE_PASSENGER);
+            removeItem(inventory, inventoryCount, itemSymbol);
+            return true;
+      }
+      
+      else if(itemSymbol == ENT_CAT_CARRIER){
+            
+            if(!hasItem(inventory, inventoryCount, itemSymbol) || currentFloor != 3 || currentRoom != 3){
+            std::cout<<"Can't use the item!"<<std::endl;
+            return false;
+            }
+
+            std::cout<<"Cat Rescued!"<<std::endl;
+            applyResourceDelta(energy, time, COST_ITEM_USE_ENERGY, COST_ITEM_USE_TIME);
+            objectives[OBJ_CAT_SECURED] = 1;
+            applyScoreDelta(score, SCORE_SECURE_CAT);
+            removeItem(inventory, inventoryCount, itemSymbol);
+            return true;
+
+      }
+     
+      else if(itemSymbol == ENT_FUSE){
+            
+            if(currentFloor != 3 || currentRoom != 4){
+            std::cout<<"Can't use the item!"<<std::endl;
+            return false;
+            }
+            if(!installFuseControlPanel(inventory, inventoryCount, objectives, score)){ 
+            std::cout<<"Can't use the item!"<<std::endl;
+            return false;
+            }
+
+            //installfuse func mein score bhi ajayega isliye idher nhi add kiya
+            std::cout<<"Fuse Installed!"<<std::endl;
+            applyResourceDelta(energy, time, COST_ITEM_USE_ENERGY, COST_ITEM_USE_TIME);
+            objectives[OBJ_FUSE_INSTALLED] = 1;
+            removeItem(inventory, inventoryCount, itemSymbol);
+            return true;
+      }
+     
+      else if(itemSymbol == ENT_CABINET_TRAIN_KEY){
+            
+            if(!objectives[OBJ_TRAIN_KEY] || !objectives[OBJ_CAT_SECURED] || !objectives[OBJ_PASSENGER_RESCUED] || currentFloor != 5 || currentRoom != 2){
+            std::cout<<"Can't use the item!"<<std::endl;
+            return false;
+            }
+
+            std::cout<<"Train is ready! LESS GOO"<<std::endl;
+            applyResourceDelta(energy, time, COST_ITEM_USE_ENERGY, COST_ITEM_USE_TIME);
+            objectives[OBJ_MISSION_WON] = 1;
+            objectives[OBJ_TRAIN_PREPARED] = 1;
+            applyScoreDelta(score, SCORE_PREPARE_TRAIN);
+            applyScoreDelta(score, SCORE_MISSION_VICTORY);\
+            return true;
+      }
+      
+      
+      else{
+        std::cout<<"Can't use the item!"<<std::endl;
+        return false;
+      }
+}
 
 
 

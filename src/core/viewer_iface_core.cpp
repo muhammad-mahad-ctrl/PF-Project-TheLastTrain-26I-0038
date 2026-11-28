@@ -13,8 +13,9 @@ void renderDashboard(int playerFloor, int playerRoom, int energy, int time, int 
     cout<<"Energy: "<<energy<<" Time: "<<time<<" Emergency Trips Left: "<<emergencyTripsLeft<<" Score: "<<score<<endl;
     cout<<"Inventory: "<<inventoryCount<<endl;
 
-    for(int i =0; i<inventoryCount; i++)
-        cout<<getEntityName(inventory[i]);
+    for(int i =0; i<inventoryCount; i++){
+        cout<<getEntityName(inventory[i])<<" ("<<inventory[i]<<")";
+    }
     cout<<endl;
 }
 
