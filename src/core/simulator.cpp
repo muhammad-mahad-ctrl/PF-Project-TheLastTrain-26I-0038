@@ -34,7 +34,7 @@ void runSimulation(int& playerFloor, int& playerRoom, int& energy, int& time, in
             bool lift2Operational = objectives[OBJ_FUSE_INSTALLED] && objectives[OBJ_LIFT_PASS];
             objectives[OBJ_LIFT2_ACTIVE] = lift2Operational;
             
-            std::cout << "\n=============================================\n";
+            std::cout << "\n==========================================================================================\n";
             
             renderDashboard(playerFloor, playerRoom, energy, time, score, inventory, inventoryCount, emergencyTripsLeft);
             renderRoomDetails(playerFloor, playerRoom, roomEntities, entityCounts[playerFloor-1][playerRoom-1]);
@@ -82,13 +82,14 @@ void runSimulation(int& playerFloor, int& playerRoom, int& energy, int& time, in
                   handleUseCommand(itemSymbol, playerFloor, playerRoom, energy, time, score, inventory, inventoryCount, objectives);
             }
             else if(action == '5'){
-                  char clue[3];
+                  char clue[4];
                   std::cout<<"Clue 1: "<<std::endl;
                   std::cin>>clue[0];
                   std::cout<<"Clue 2: "<<std::endl;
                   std::cin>>clue[1];
                   std::cout<<"Clue 3: "<<std::endl;
                   std::cin>>clue[2];
+                  clue[3] = '\0';
                   if (handleUnlockCabinetCommand(clue, playerFloor, playerRoom, objectives, score, roomEntities, entityCounts[playerFloor-1][playerRoom-1]))
                      applyResourceDelta(energy, time, COST_ITEM_USE_ENERGY, COST_ITEM_USE_TIME);
             }
