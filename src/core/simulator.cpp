@@ -68,7 +68,6 @@ void runSimulation(int& playerFloor, int& playerRoom, int& energy, int& time, in
                   char itemSymbol;
                   std::cout<<"Collect item: "<<std::endl;
                   std::cin>>itemSymbol;
-                  handleCollectCommand(itemSymbol, playerFloor, playerRoom, energy, time, score, roomEntities, entityCounts[playerFloor-1][playerRoom-1], inventory, inventoryCount, objectives);
                   
                   //agar emergency card valid and collected he to trips = 3
                   bool is_card_collected = handleCollectCommand(itemSymbol, playerFloor, playerRoom, energy, time, score, roomEntities, entityCounts[playerFloor-1][playerRoom-1], inventory, inventoryCount, objectives);
@@ -82,7 +81,28 @@ void runSimulation(int& playerFloor, int& playerRoom, int& energy, int& time, in
                   std::cin>>itemSymbol;
                   handleUseCommand(itemSymbol, playerFloor, playerRoom, energy, time, score, inventory, inventoryCount, objectives);
             }
+            else if(action == '5'){
+                  char clue[3];
+                  std::cout<<"Clue 1: "<<std::endl;
+                  std::cin>>clue[0];
+                  std::cout<<"Clue 2: "<<std::endl;
+                  std::cin>>clue[1];
+                  std::cout<<"Clue 3: "<<std::endl;
+                  std::cin>>clue[2];
+                  if (handleUnlockCabinetCommand(clue, playerFloor, playerRoom, objectives, score, roomEntities, entityCounts[playerFloor-1][playerRoom-1]))
+                     applyResourceDelta(energy, time, COST_ITEM_USE_ENERGY, COST_ITEM_USE_TIME);
+            }
+
+            if (checkEndConditions(energy, time, objectives)) 
+            break;
       }
+      if(objectives[OBJ_MISSION_WON])
+            printHeader("YOU WON!");
+      else if(energy <= 0 || time <= 0) {
+            objectives[OBJ_MISSION_FAILED] = 1;
+            printHeader("WHAT A LOSER!");
+      }
+
 }
 
 
@@ -250,11 +270,9 @@ bool handleUseCommand(char itemSymbol, int currentFloor, int currentRoom, int& e
             return false;
             }
 
-            //installfuse func mein score bhi ajayega isliye idher nhi add kiya
+            //installfuse func mein score, objective and remove alr hogya he 
             std::cout<<"Fuse Installed!"<<std::endl;
             applyResourceDelta(energy, time, COST_ITEM_USE_ENERGY, COST_ITEM_USE_TIME);
-            objectives[OBJ_FUSE_INSTALLED] = 1;
-            removeItem(inventory, inventoryCount, itemSymbol);
             return true;
       }
      
@@ -270,7 +288,7 @@ bool handleUseCommand(char itemSymbol, int currentFloor, int currentRoom, int& e
             objectives[OBJ_MISSION_WON] = 1;
             objectives[OBJ_TRAIN_PREPARED] = 1;
             applyScoreDelta(score, SCORE_PREPARE_TRAIN);
-            applyScoreDelta(score, SCORE_MISSION_VICTORY);\
+            applyScoreDelta(score, SCORE_MISSION_VICTORY);
             return true;
       }
       
@@ -285,12 +303,38 @@ bool handleUseCommand(char itemSymbol, int currentFloor, int currentRoom, int& e
 
 bool handleUnlockCabinetCommand(const char* code, int currentFloor, int currentRoom, bool objectives[NUM_OBJECTIVES], int& score,  char roomEntities[NUM_FLOORS][ROOMS_PER_FLOOR][MAX_ENTITIES_PER_ROOM], int& entityCount){
 
-                    return true;
-                   }
+      (void)roomEntities; (void)entityCount; //use nhi kiye
+
+      if(currentFloor != 5 || currentRoom != 1){
+            std::cout<<"Can't Unlock here!"<<std::endl;
+            return false;
+      }
+      if(objectives[OBJ_CABINET_UNLOCKED]){
+            std::cout<<"Cabinet is Already Unlocked!"<<std::endl;
+            return false;
+      }
+      if(verifyCabinetCode(code, objectives)){
+            objectives[OBJ_CABINET_UNLOCKED] = 1;
+            objectives[OBJ_TRAIN_KEY] = 1;
+            applyScoreDelta(score, SCORE_CABINET_UNLOCK);
+            applyScoreDelta(score, SCORE_TRAIN_KEY);
+            return true;
+      }
+      else{
+            std::cout<<"Digit Clues Missing!"<<std::endl;
+            return false;
+      }
+
+}
 
 
 
 bool checkEndConditions(int energy, int time, const bool objectives[NUM_OBJECTIVES]){
 
-                    return true;
-                   }
+      if(objectives[OBJ_MISSION_WON] || energy <=0 || time <=0)
+      return true;
+      else
+      return false;
+
+
+}
