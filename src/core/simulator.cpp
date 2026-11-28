@@ -103,6 +103,8 @@ void runSimulation(int& playerFloor, int& playerRoom, int& energy, int& time, in
             printHeader("WHAT A LOSER!");
       }
 
+      writeGameSummaryReport("out/summary.txt", score, energy, time, objectives, objectives[OBJ_MISSION_WON]);
+
 }
 
 
