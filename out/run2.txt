@@ -1,10 +1,9 @@
 ===========================================
  THE LAST TRAIN - SIMULATION INITIALIZED   
 ===========================================
+Load Save Game? (1/0)
 Enter Starting Floor:
 Enter Starting Room:
-
-==========================================================================================
 ========Status========
 Location: F4-R2
 Resources: 
@@ -22,9 +21,7 @@ $ -  Emergency Card
 [ ][ ][ ][ ]
 [ ][ ][ ][ ]
 Action (1 Move    2 Inspect    3 Collect    4 Use    5 Unlock cabinet    6 Save    7 Quit): 
-Collect item: 
-
-==========================================================================================
+[2J[HCollect item: 
 ========Status========
 Location: F4-R2
 Resources: 
@@ -41,9 +38,7 @@ $ -  Emergency Card
 [ ][ ][ ][ ]
 [ ][ ][ ][ ]
 Action (1 Move    2 Inspect    3 Collect    4 Use    5 Unlock cabinet    6 Save    7 Quit): 
-Collect item: 
-
-==========================================================================================
+[2J[HCollect item: 
 ========Status========
 Location: F4-R2
 Resources: 
@@ -60,10 +55,8 @@ Nothing visible here :)
 [ ][ ][ ][ ]
 [ ][ ][ ][ ]
 Action (1 Move    2 Inspect    3 Collect    4 Use    5 Unlock cabinet    6 Save    7 Quit): 
-Enter Target Floor: 
+[2J[HEnter Target Floor: 
 Enter Target Room: 
-
-==========================================================================================
 ========Status========
 Location: F4-R1
 Resources: 
@@ -80,10 +73,8 @@ Room: F4-R1
 [ ][ ][ ][ ]
 [ ][ ][ ][ ]
 Action (1 Move    2 Inspect    3 Collect    4 Use    5 Unlock cabinet    6 Save    7 Quit): 
-Use item: 
+[2J[HUse item: 
 Passenger Rescued!
-
-==========================================================================================
 ========Status========
 Location: F4-R1
 Resources: 
@@ -100,10 +91,8 @@ Room: F4-R1
 [ ][ ][ ][ ]
 [ ][ ][ ][ ]
 Action (1 Move    2 Inspect    3 Collect    4 Use    5 Unlock cabinet    6 Save    7 Quit): 
-Enter Target Floor: 
+[2J[HEnter Target Floor: 
 Enter Target Room: 
-
-==========================================================================================
 ========Status========
 Location: F5-R1
 Resources: 
@@ -120,9 +109,7 @@ Room: F5-R1
 [ ][ ][ ][ ]
 [ ][ ][ ][ ]
 Action (1 Move    2 Inspect    3 Collect    4 Use    5 Unlock cabinet    6 Save    7 Quit): 
-Clue Digit Found: 7
-
-==========================================================================================
+[2J[HClue Digit Found: 7
 ========Status========
 Location: F5-R1
 Resources: 
@@ -139,10 +126,8 @@ Room: F5-R1
 [ ][ ][ ][ ]
 [ ][ ][ ][ ]
 Action (1 Move    2 Inspect    3 Collect    4 Use    5 Unlock cabinet    6 Save    7 Quit): 
-Enter Target Floor: 
+[2J[HEnter Target Floor: 
 Enter Target Room: 
-
-==========================================================================================
 ========Status========
 Location: F5-R2
 Resources: 
@@ -159,10 +144,8 @@ Nothing visible here :)
 [ ][ ][ ][ ]
 [ ][ ][ ][ ]
 Action (1 Move    2 Inspect    3 Collect    4 Use    5 Unlock cabinet    6 Save    7 Quit): 
-Enter Target Floor: 
+[2J[HEnter Target Floor: 
 Enter Target Room: 
-
-==========================================================================================
 ========Status========
 Location: F5-R3
 Resources: 
@@ -179,9 +162,7 @@ Room: F5-R3
 [ ][ ][ ][ ]
 [ ][ ][ ][ ]
 Action (1 Move    2 Inspect    3 Collect    4 Use    5 Unlock cabinet    6 Save    7 Quit): 
-Collect item: 
-
-==========================================================================================
+[2J[HCollect item: 
 ========Status========
 Location: F5-R3
 Resources: 
@@ -198,10 +179,8 @@ Nothing visible here :)
 [ ][ ][ ][ ]
 [ ][ ][ ][ ]
 Action (1 Move    2 Inspect    3 Collect    4 Use    5 Unlock cabinet    6 Save    7 Quit): 
-Enter Target Floor: 
+[2J[HEnter Target Floor: 
 Enter Target Room: 
-
-==========================================================================================
 ========Status========
 Location: F5-R4
 Resources: 
@@ -218,10 +197,8 @@ Room: F5-R4
 [ ][ ][ ][ ]
 [ ][ ][ ][ ]
 Action (1 Move    2 Inspect    3 Collect    4 Use    5 Unlock cabinet    6 Save    7 Quit): 
-Collect item: 
+[2J[HCollect item: 
 Time +15
-
-==========================================================================================
 ========Status========
 Location: F5-R4
 Resources: 
@@ -238,10 +215,8 @@ Nothing visible here :)
 [ ][ ][ ][ ]
 [ ][ ][ ][ ]
 Action (1 Move    2 Inspect    3 Collect    4 Use    5 Unlock cabinet    6 Save    7 Quit): 
-Enter Target Floor: 
+[2J[HEnter Target Floor: 
 Enter Target Room: 
-
-==========================================================================================
 ========Status========
 Location: F4-R4
 Resources: 
@@ -258,10 +233,8 @@ Nothing visible here :)
 [ ][ ][ ][ ]
 [ ][ ][ ][ ]
 Action (1 Move    2 Inspect    3 Collect    4 Use    5 Unlock cabinet    6 Save    7 Quit): 
-Enter Target Floor: 
+[2J[HEnter Target Floor: 
 Enter Target Room: 
-
-==========================================================================================
 ========Status========
 Location: F4-R3
 Resources: 
@@ -278,9 +251,7 @@ Nothing visible here :)
 [ ][ ][ ][ ]
 [ ][ ][ ][ ]
 Action (1 Move    2 Inspect    3 Collect    4 Use    5 Unlock cabinet    6 Save    7 Quit): 
-Clue Digit Found: 2
-
-==========================================================================================
+[2J[HClue Digit Found: 2
 ========Status========
 Location: F4-R3
 Resources: 
@@ -297,10 +268,8 @@ Nothing visible here :)
 [ ][ ][ ][ ]
 [ ][ ][ ][ ]
 Action (1 Move    2 Inspect    3 Collect    4 Use    5 Unlock cabinet    6 Save    7 Quit): 
-Enter Target Floor: 
+[2J[HEnter Target Floor: 
 Enter Target Room: 
-
-==========================================================================================
 ========Status========
 Location: F4-R4
 Resources: 
@@ -317,10 +286,8 @@ Nothing visible here :)
 [ ][ ][ ][ ]
 [ ][ ][ ][ ]
 Action (1 Move    2 Inspect    3 Collect    4 Use    5 Unlock cabinet    6 Save    7 Quit): 
-Enter Target Floor: 
+[2J[HEnter Target Floor: 
 Enter Target Room: 
-
-==========================================================================================
 ========Status========
 Location: F2-R4
 Resources: 
@@ -337,10 +304,8 @@ Nothing visible here :)
 [ ][ ][ ][U]
 [ ][ ][ ][ ]
 Action (1 Move    2 Inspect    3 Collect    4 Use    5 Unlock cabinet    6 Save    7 Quit): 
-Enter Target Floor: 
+[2J[HEnter Target Floor: 
 Enter Target Room: 
-
-==========================================================================================
 ========Status========
 Location: F2-R3
 Resources: 
@@ -357,10 +322,8 @@ Room: F2-R3
 [ ][ ][U][ ]
 [ ][ ][ ][ ]
 Action (1 Move    2 Inspect    3 Collect    4 Use    5 Unlock cabinet    6 Save    7 Quit): 
-Enter Target Floor: 
+[2J[HEnter Target Floor: 
 Enter Target Room: 
-
-==========================================================================================
 ========Status========
 Location: F1-R2
 Resources: 
@@ -377,9 +340,7 @@ Room: F1-R2
 [ ][ ][ ][ ]
 [ ][U][ ][ ]
 Action (1 Move    2 Inspect    3 Collect    4 Use    5 Unlock cabinet    6 Save    7 Quit): 
-Collect item: 
-
-==========================================================================================
+[2J[HCollect item: 
 ========Status========
 Location: F1-R2
 Resources: 
@@ -396,10 +357,8 @@ Nothing visible here :)
 [ ][ ][ ][ ]
 [ ][U][ ][ ]
 Action (1 Move    2 Inspect    3 Collect    4 Use    5 Unlock cabinet    6 Save    7 Quit): 
-Enter Target Floor: 
+[2J[HEnter Target Floor: 
 Enter Target Room: 
-
-==========================================================================================
 ========Status========
 Location: F1-R1
 Resources: 
@@ -416,10 +375,8 @@ Nothing visible here :)
 [ ][ ][ ][ ]
 [U][ ][ ][ ]
 Action (1 Move    2 Inspect    3 Collect    4 Use    5 Unlock cabinet    6 Save    7 Quit): 
-Enter Target Floor: 
+[2J[HEnter Target Floor: 
 Enter Target Room: 
-
-==========================================================================================
 ========Status========
 Location: F2-R1
 Resources: 
@@ -436,10 +393,8 @@ Nothing visible here :)
 [U][ ][ ][ ]
 [ ][ ][ ][ ]
 Action (1 Move    2 Inspect    3 Collect    4 Use    5 Unlock cabinet    6 Save    7 Quit): 
-Enter Target Floor: 
+[2J[HEnter Target Floor: 
 Enter Target Room: 
-
-==========================================================================================
 ========Status========
 Location: F3-R1
 Resources: 
@@ -456,10 +411,8 @@ Nothing visible here :)
 [ ][ ][ ][ ]
 [ ][ ][ ][ ]
 Action (1 Move    2 Inspect    3 Collect    4 Use    5 Unlock cabinet    6 Save    7 Quit): 
-Enter Target Floor: 
+[2J[HEnter Target Floor: 
 Enter Target Room: 
-
-==========================================================================================
 ========Status========
 Location: F3-R2
 Resources: 
@@ -476,9 +429,7 @@ Room: F3-R2
 [ ][ ][ ][ ]
 [ ][ ][ ][ ]
 Action (1 Move    2 Inspect    3 Collect    4 Use    5 Unlock cabinet    6 Save    7 Quit): 
-Clue Digit Found: 4
-
-==========================================================================================
+[2J[HClue Digit Found: 4
 ========Status========
 Location: F3-R2
 Resources: 
@@ -495,10 +446,8 @@ Room: F3-R2
 [ ][ ][ ][ ]
 [ ][ ][ ][ ]
 Action (1 Move    2 Inspect    3 Collect    4 Use    5 Unlock cabinet    6 Save    7 Quit): 
-Enter Target Floor: 
+[2J[HEnter Target Floor: 
 Enter Target Room: 
-
-==========================================================================================
 ========Status========
 Location: F3-R3
 Resources: 
@@ -515,10 +464,8 @@ Room: F3-R3
 [ ][ ][ ][ ]
 [ ][ ][ ][ ]
 Action (1 Move    2 Inspect    3 Collect    4 Use    5 Unlock cabinet    6 Save    7 Quit): 
-Use item: 
+[2J[HUse item: 
 Cat Rescued!
-
-==========================================================================================
 ========Status========
 Location: F3-R3
 Resources: 
@@ -535,10 +482,8 @@ Room: F3-R3
 [ ][ ][ ][ ]
 [ ][ ][ ][ ]
 Action (1 Move    2 Inspect    3 Collect    4 Use    5 Unlock cabinet    6 Save    7 Quit): 
-Enter Target Floor: 
+[2J[HEnter Target Floor: 
 Enter Target Room: 
-
-==========================================================================================
 ========Status========
 Location: F3-R2
 Resources: 
@@ -555,10 +500,8 @@ Room: F3-R2
 [ ][ ][ ][ ]
 [ ][ ][ ][ ]
 Action (1 Move    2 Inspect    3 Collect    4 Use    5 Unlock cabinet    6 Save    7 Quit): 
-Enter Target Floor: 
+[2J[HEnter Target Floor: 
 Enter Target Room: 
-
-==========================================================================================
 ========Status========
 Location: F3-R1
 Resources: 
@@ -575,10 +518,8 @@ Nothing visible here :)
 [ ][ ][ ][ ]
 [ ][ ][ ][ ]
 Action (1 Move    2 Inspect    3 Collect    4 Use    5 Unlock cabinet    6 Save    7 Quit): 
-Enter Target Floor: 
+[2J[HEnter Target Floor: 
 Enter Target Room: 
-
-==========================================================================================
 ========Status========
 Location: F2-R1
 Resources: 
@@ -595,10 +536,8 @@ Nothing visible here :)
 [U][ ][ ][ ]
 [ ][ ][ ][ ]
 Action (1 Move    2 Inspect    3 Collect    4 Use    5 Unlock cabinet    6 Save    7 Quit): 
-Enter Target Floor: 
+[2J[HEnter Target Floor: 
 Enter Target Room: 
-
-==========================================================================================
 ========Status========
 Location: F1-R1
 Resources: 
@@ -615,10 +554,8 @@ Nothing visible here :)
 [ ][ ][ ][ ]
 [U][ ][ ][ ]
 Action (1 Move    2 Inspect    3 Collect    4 Use    5 Unlock cabinet    6 Save    7 Quit): 
-Enter Target Floor: 
+[2J[HEnter Target Floor: 
 Enter Target Room: 
-
-==========================================================================================
 ========Status========
 Location: F1-R2
 Resources: 
@@ -635,10 +572,8 @@ Nothing visible here :)
 [ ][ ][ ][ ]
 [ ][U][ ][ ]
 Action (1 Move    2 Inspect    3 Collect    4 Use    5 Unlock cabinet    6 Save    7 Quit): 
-Enter Target Floor: 
+[2J[HEnter Target Floor: 
 Enter Target Room: 
-
-==========================================================================================
 ========Status========
 Location: F2-R3
 Resources: 
@@ -655,10 +590,8 @@ Room: F2-R3
 [ ][ ][U][ ]
 [ ][ ][ ][ ]
 Action (1 Move    2 Inspect    3 Collect    4 Use    5 Unlock cabinet    6 Save    7 Quit): 
-Enter Target Floor: 
+[2J[HEnter Target Floor: 
 Enter Target Room: 
-
-==========================================================================================
 ========Status========
 Location: F2-R4
 Resources: 
@@ -675,10 +608,8 @@ Nothing visible here :)
 [ ][ ][ ][U]
 [ ][ ][ ][ ]
 Action (1 Move    2 Inspect    3 Collect    4 Use    5 Unlock cabinet    6 Save    7 Quit): 
-Enter Target Floor: 
+[2J[HEnter Target Floor: 
 Enter Target Room: 
-
-==========================================================================================
 ========Status========
 Location: F5-R4
 Resources: 
@@ -695,10 +626,8 @@ Nothing visible here :)
 [ ][ ][ ][ ]
 [ ][ ][ ][ ]
 Action (1 Move    2 Inspect    3 Collect    4 Use    5 Unlock cabinet    6 Save    7 Quit): 
-Enter Target Floor: 
+[2J[HEnter Target Floor: 
 Enter Target Room: 
-
-==========================================================================================
 ========Status========
 Location: F5-R3
 Resources: 
@@ -715,10 +644,8 @@ Nothing visible here :)
 [ ][ ][ ][ ]
 [ ][ ][ ][ ]
 Action (1 Move    2 Inspect    3 Collect    4 Use    5 Unlock cabinet    6 Save    7 Quit): 
-Enter Target Floor: 
+[2J[HEnter Target Floor: 
 Enter Target Room: 
-
-==========================================================================================
 ========Status========
 Location: F5-R2
 Resources: 
@@ -735,10 +662,8 @@ Nothing visible here :)
 [ ][ ][ ][ ]
 [ ][ ][ ][ ]
 Action (1 Move    2 Inspect    3 Collect    4 Use    5 Unlock cabinet    6 Save    7 Quit): 
-Enter Target Floor: 
+[2J[HEnter Target Floor: 
 Enter Target Room: 
-
-==========================================================================================
 ========Status========
 Location: F5-R1
 Resources: 
@@ -755,11 +680,9 @@ Room: F5-R1
 [ ][ ][ ][ ]
 [ ][ ][ ][ ]
 Action (1 Move    2 Inspect    3 Collect    4 Use    5 Unlock cabinet    6 Save    7 Quit): 
-Clue 1: 
+[2J[HClue 1: 
 Clue 2: 
 Clue 3: 
-
-==========================================================================================
 ========Status========
 Location: F5-R1
 Resources: 
@@ -776,10 +699,8 @@ Room: F5-R1
 [ ][ ][ ][ ]
 [ ][ ][ ][ ]
 Action (1 Move    2 Inspect    3 Collect    4 Use    5 Unlock cabinet    6 Save    7 Quit): 
-Enter Target Floor: 
+[2J[HEnter Target Floor: 
 Enter Target Room: 
-
-==========================================================================================
 ========Status========
 Location: F5-R2
 Resources: 
@@ -796,6 +717,6 @@ Nothing visible here :)
 [ ][ ][ ][ ]
 [ ][ ][ ][ ]
 Action (1 Move    2 Inspect    3 Collect    4 Use    5 Unlock cabinet    6 Save    7 Quit): 
-Use item: 
+[2J[HUse item: 
 Train is ready! LESS GOO
 ========YOU WON!========
