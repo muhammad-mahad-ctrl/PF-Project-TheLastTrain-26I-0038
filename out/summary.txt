@@ -1,20 +1,20 @@
 ===Game Summary===
 Result: Lost
-Energy: 83
-Time: 39
-Score: 0
+Energy: 57
+Time: 13
+Score: 10
 Objectives: 
- ( ) Master Key
+ (X) Master Key
  ( ) Clue Digit 2
  ( ) Clue Digit 4
  ( ) Clue Digit 7
  ( ) Cabinet Unlocked
  ( ) Train Key
- ( ) Fuse Collected
+ (X) Fuse Collected
  ( ) Fuse Installed
  ( ) Lift Pass
  ( ) Lift 2 Active
  ( ) Passenger Rescued
- (X) Cat Carrier
+ ( ) Cat Carrier
  ( ) Cat Secured
  ( ) Train Prepared

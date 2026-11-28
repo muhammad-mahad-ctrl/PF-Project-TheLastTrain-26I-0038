@@ -108,3 +108,46 @@ bool saveGameStateToFile(const char* filename, int playerFloor, int playerRoom, 
     save.close();
     return true;
 }
+
+
+bool loadGameStateFromFile(const char* filename, int& playerFloor, int& playerRoom, int& energy, int& time, int& score, char inventory[MAX_INVENTORY_CAPACITY], int& inventoryCount, bool objectives[NUM_OBJECTIVES], int& emergencyTripsLeft, char roomEntities[NUM_FLOORS][ROOMS_PER_FLOOR][MAX_ENTITIES_PER_ROOM], int entityCounts[NUM_FLOORS][ROOMS_PER_FLOOR]){
+
+    ifstream load(filename);
+
+    if(!load.is_open()) {
+        cout<<"Couldn't open file!"<<endl;
+        return false;
+    }
+
+    char line[MAX_LINE_LEN];
+
+    load.getline(line, MAX_LINE_LEN);
+
+    if (!stringEquals(line, "LASTTRAIN_SAVE")) {
+        return false;
+    }
+
+    load>>playerFloor>>playerRoom;
+    load>>energy>>time>>score>>emergencyTripsLeft;
+    load>>inventoryCount;
+    
+    //inventory items
+    for(int i = 0; i < inventoryCount; i++)
+    load >> inventory[i];
+
+    for(int i = 0; i < NUM_OBJECTIVES; i++)
+    load >> objectives[i];
+
+    for (int floor = 0; floor < NUM_FLOORS; floor++) {
+        for (int room = 0; room < ROOMS_PER_FLOOR; room++) {
+            load>>entityCounts[floor][room];
+
+            for(int ent = 0; ent<entityCounts[floor][room]; ent++)
+            load>>roomEntities[floor][room][ent];    
+                     
+        }
+    }
+
+    load.close();
+    return 1;
+}

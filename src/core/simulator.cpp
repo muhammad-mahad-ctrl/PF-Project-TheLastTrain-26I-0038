@@ -13,6 +13,22 @@ void runSimulation(int& playerFloor, int& playerRoom, int& energy, int& time, in
     
       while (true)
       {
+            bool load = 0;
+
+            std::cout<<"Load Save Game? (1/0)"<<std::endl;
+            std::cin>>load;
+            
+            if(load){
+                  load = loadGameStateFromFile("out/save.txt", playerFloor, playerRoom, energy, time, score, inventory, inventoryCount, objectives, emergencyTripsLeft, roomEntities, entityCounts);
+                  if (!load) std::cout << "No save game found. New Game Started!" << std::endl;
+            }
+            if(load){
+            printHeader("Game Loaded");
+            break;
+            }
+            
+
+
             std::cout<<"Enter Starting Floor:"<<std::endl;
             std::cin>>playerFloor;
             std::cout<<"Enter Starting Room:"<<std::endl;
@@ -24,9 +40,14 @@ void runSimulation(int& playerFloor, int& playerRoom, int& energy, int& time, in
                std::cout<<"Enter Valid Location!"<<std::endl;
                continue;
             }   
+
+            
             break;
+            
       }
       
+      
+
       //loop jab tk end conditions
       while(true){
             
@@ -344,6 +365,5 @@ bool checkEndConditions(int energy, int time, const bool objectives[NUM_OBJECTIV
       return true;
       else
       return false;
-
 
 }
