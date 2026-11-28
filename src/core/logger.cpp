@@ -68,3 +68,43 @@ void writeGameSummaryReport(const char* filename, int score, int remainingEnergy
 
      summary.close();
 }
+
+
+bool saveGameStateToFile(const char* filename, int playerFloor, int playerRoom, int energy, int time, int score, const char inventory[MAX_INVENTORY_CAPACITY], int inventoryCount, const bool objectives[NUM_OBJECTIVES], int emergencyTripsLeft, const char roomEntities[NUM_FLOORS][ROOMS_PER_FLOOR][MAX_ENTITIES_PER_ROOM], const int entityCounts[NUM_FLOORS][ROOMS_PER_FLOOR]){
+
+    ofstream save(filename);
+    
+    if(!save.is_open()) {
+        cout<<"Couldn't open file!"<<endl;
+        return false;
+    }
+
+    save<<"LASTTRAIN_SAVE"<<endl;
+    save<<playerFloor<<" "<<playerRoom<<endl;
+    save<<energy<<" "<<time<<" "<<score<<endl;
+    save<<emergencyTripsLeft<<endl;
+    
+    //inventory
+    save<<inventoryCount<<" ";
+    for(int i = 0; i < inventoryCount; i++ )
+    save<<inventory[i]<<" ";
+    save<<endl;
+
+    //objectives
+    for(int i = 0; i<NUM_OBJECTIVES; i++)
+    save<<objectives[i]<<" ";
+    save<<endl;
+
+    //room details
+    for(int floor = 0; floor < NUM_FLOORS; floor++){
+        for(int room = 0; room < ROOMS_PER_FLOOR; room++){
+            save<<entityCounts[floor][room]<<" ";
+            for(int ent = 0; ent <entityCounts[floor][room]; ent++)
+            save<<roomEntities[floor][room][ent]<<" ";
+            save<<endl;
+        }
+
+    }
+    save.close();
+    return true;
+}

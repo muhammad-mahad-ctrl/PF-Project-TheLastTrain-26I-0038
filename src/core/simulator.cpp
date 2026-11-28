@@ -93,6 +93,12 @@ void runSimulation(int& playerFloor, int& playerRoom, int& energy, int& time, in
                   if (handleUnlockCabinetCommand(clue, playerFloor, playerRoom, objectives, score, roomEntities, entityCounts[playerFloor-1][playerRoom-1]))
                      applyResourceDelta(energy, time, COST_ITEM_USE_ENERGY, COST_ITEM_USE_TIME);
             }
+            else if(action == '6'){
+                  if(saveGameStateToFile("out/save.txt", playerFloor, playerRoom, energy, time, score, inventory, inventoryCount, objectives, emergencyTripsLeft, roomEntities, entityCounts))
+                  std::cout<<"Game Saved!"<<std::endl;
+                  else
+                  std::cout<<"Couldnt save!"<<std::endl;
+            }
 
             if (checkEndConditions(energy, time, objectives)) 
             break;
