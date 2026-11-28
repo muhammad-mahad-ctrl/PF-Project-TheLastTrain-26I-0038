@@ -40,3 +40,7 @@ void objectiveDone(const char* objectiveLabel, bool is_done){ //viewer_iface mei
     else
         std::cout<<" ( ) "<<objectiveLabel<<endl;
 }
+void clearScreen(){
+
+    cout<<"\033[2J\033[H";
+}

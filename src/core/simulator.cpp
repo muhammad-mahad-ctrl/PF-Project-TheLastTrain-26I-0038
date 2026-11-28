@@ -40,12 +40,8 @@ void runSimulation(int& playerFloor, int& playerRoom, int& energy, int& time, in
                std::cout<<"Enter Valid Location!"<<std::endl;
                continue;
             }   
-
-            
             break;
-            
       }
-      
       
 
       //loop jab tk end conditions
@@ -54,8 +50,6 @@ void runSimulation(int& playerFloor, int& playerRoom, int& energy, int& time, in
             //lift 2
             bool lift2Operational = objectives[OBJ_FUSE_INSTALLED] && objectives[OBJ_LIFT_PASS];
             objectives[OBJ_LIFT2_ACTIVE] = lift2Operational;
-            
-            std::cout << "\n==========================================================================================\n";
             
             renderDashboard(playerFloor, playerRoom, energy, time, score, inventory, inventoryCount, emergencyTripsLeft);
             renderRoomDetails(playerFloor, playerRoom, roomEntities, entityCounts[playerFloor-1][playerRoom-1]);
@@ -73,8 +67,9 @@ void runSimulation(int& playerFloor, int& playerRoom, int& energy, int& time, in
               continue;      
             }
 
-            if(action == '7') { break; }       
+            if(action == '7') {clearScreen(); break; }       
             else if(action == '1'){
+               clearScreen();
                int floor, room;
                std::cout<<"Enter Target Floor: "<<std::endl;
                std::cin>>floor;
@@ -83,9 +78,11 @@ void runSimulation(int& playerFloor, int& playerRoom, int& energy, int& time, in
                handleMoveCommand(floor, room, playerFloor, playerRoom, energy, time, horizontalConn, inventory, inventoryCount, emergencyTripsLeft, lift2Operational);
             }    
             else if(action == '2'){
+                  clearScreen();
                   handleInspectCommand(playerFloor, playerRoom, energy, time, roomEntities,  entityCounts[playerFloor-1][playerRoom-1], objectives, score);
             } 
             else if(action == '3'){
+                  clearScreen();
                   char itemSymbol;
                   std::cout<<"Collect item: "<<std::endl;
                   std::cin>>itemSymbol;
@@ -97,12 +94,14 @@ void runSimulation(int& playerFloor, int& playerRoom, int& energy, int& time, in
                   emergencyTripsLeft = 3;
             }
             else if(action == '4'){
+                  clearScreen();
                   char itemSymbol;
                   std::cout<<"Use item: "<<std::endl;
                   std::cin>>itemSymbol;
                   handleUseCommand(itemSymbol, playerFloor, playerRoom, energy, time, score, inventory, inventoryCount, objectives);
             }
             else if(action == '5'){
+                  clearScreen();
                   char clue[4];
                   std::cout<<"Clue 1: "<<std::endl;
                   std::cin>>clue[0];
@@ -115,6 +114,7 @@ void runSimulation(int& playerFloor, int& playerRoom, int& energy, int& time, in
                      applyResourceDelta(energy, time, COST_ITEM_USE_ENERGY, COST_ITEM_USE_TIME);
             }
             else if(action == '6'){
+                  clearScreen();
                   if(saveGameStateToFile("out/save.txt", playerFloor, playerRoom, energy, time, score, inventory, inventoryCount, objectives, emergencyTripsLeft, roomEntities, entityCounts))
                   std::cout<<"Game Saved!"<<std::endl;
                   else
